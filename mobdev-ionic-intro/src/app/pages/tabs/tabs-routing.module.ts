@@ -32,6 +32,18 @@ const routes: Routes = [
                         }        
                     ]      
             },
+            {path: 'planets',        
+              children: [          
+                        {
+                          path: '',            
+                          loadChildren: () => import('../planets/planets.module').then( m => m.PlanetsPageModule)          
+                        },          
+                        {
+                          path: ':id',
+                          loadChildren: () => import('../planets/planets.module').then( m => m.PlanetsPageModule)          
+                        }        
+                    ]      
+            },
           ],
         }
 ];
